@@ -134,4 +134,52 @@ void two(long number)              // 345678
 
    //
    ////////////////////////////////////////////////
+	
+	
+   
+   pChar = (char * ) & bow;
+   while (string(pChar++) != "*MAIN**");   //check before moving
+   std::cout << pChar << (void * ) pChar << std::endl;
+
+   // change text in main() to "*main**"
+   pChar[0] = 'm';
+   pChar[1] = 'a';
+   pChar[2] = 'i';
+   pChar[3] = 'n';
+
+   std::cout << pChar << std::endl;  //show main
+
+   pLong = (long * ) & bow;
+   while ( * pLong != 123456) {    //check before moving
+     pLong++; //count pLong
+   }
+   std::cout << * pLong << std::endl;
+   * pLong = 654321; // change number in main() to 654321
+   std::cout << * pLong << std::endl; //show 654321
+
+   pLong = (long * ) & bow;
+   while ( * pLong != (long long) fail) {
+     pLong++;
+   }
+   std::cout << * pLong << std::endl;
+   * pLong = (long long) pass;
+   // change pointerFunction in main() to point to pass
+
+   std::cout << * pLong << std::endl;
+   // change message in main() to point to passMessage
+
+   pLong = (long * ) & bow;
+   while ( * pLong != (long long) failMessage) {
+     pLong++;
+   }
+   
+   pChar = (char * ) * pLong;
+   std::cout << string(pChar) << std::endl;
+   * pLong = (long long) passMessage;
+   
+   pChar = (char * ) * pLong;
+   std::cout << string(pChar) << std::endl;
+
+
+   }	
 }
